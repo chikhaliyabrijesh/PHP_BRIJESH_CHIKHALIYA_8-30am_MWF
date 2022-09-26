@@ -1,0 +1,42 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.navbar-brand
+{
+    color: white !important;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-left: 2%;
+}
+.navbar
+{
+    width: 100%;
+    height: auto;
+    background-color: #3b57f5;
+}
+.navbar-link
+{
+    margin-left: 25%;
+    margin-top: 0%;
+}
+.navbar-link li
+{
+    display: inline-block;
+}
+.navbar-link a
+{
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: 200;
+    padding: 5px 15px;
+}
+.dropdown-menu
+{
+    background-color: #3b57f5 !important;
+}
