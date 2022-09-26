@@ -1,0 +1,147 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.navbar-brand
+{
+    color: white !important;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-left: 2%;
+}
+.navbar 
+{
+    width: 100%;
+    height: auto;
+    background-color: #0a3cd1;
+}
+.navbar-link
+{
+    margin-left: 25%;
+    margin-top: 0%;
+}
+.navbar-link li 
+{
+    display: inline-block;
+}
+.navbar-link a 
+{
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: 200;
+    padding: 5px 15px;
+}
+
+.dropdown-menu
+{
+    background-color: #0a3cd1 !important; 
+}
+#carouselExampleCaptions
+{
+    width: 96%;
+    height: 350px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.carousel-inner img 
+{
+    width: 90%;
+    height: 350px;
+   
+}
+.btn-prod
+{
+    border: none;
+    background-color: #0a3cd1 !important;
+}
+.prod-items 
+{
+    width: auto;
+    height: auto;
+    /* box-shadow: 1px 1px gray; */
+}
+.prod-items img:hover 
+{
+ width: 90% !important;
+ height: 110px;
+}
+
+.footer 
+{
+    width: 100%;
+    height: auto;
+    background-color:#06295c;
+    margin-top: 5%;
+}
+.footer-link li 
+{
+    display: block;
+}
+.footer-link a 
+{
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+}
+.vert-line 
+{
+    border-right: solid 1px white;
+}
+.footer-hr 
+{
+    border: solid 1px white !important;
+}
+.bi-gift,.bi-badge-ad,.bi-question-diamond
+{
+    color: yellow !important;
+}
+#btn
+{
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #06295c;
+    color: white;
+    border: none;
+}
+.modal-dialog
+{
+    min-width: 50% !important;
+    height: auto !important;
+    margin: auto;
+}
+@media only screen and (min-width:320px) and (max-width:480px)
+{
+.navbar-link li
+{
+    display: block;
+}
+.carousel-inner img 
+{
+    width: 100%;
+    height: 250px;
+}
+#adv img
+{
+    width: 96%;
+    height: auto;
+    margin-left: 2%;
+}
+.vert-line 
+{
+    border-right: none;
+}
+.modal-dialog
+{
+    min-width: 80% !important;
+    height: auto !important;
+    margin: auto;
+}
+}
+
+
