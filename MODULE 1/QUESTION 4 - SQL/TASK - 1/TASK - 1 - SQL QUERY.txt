@@ -1,0 +1,74 @@
+			    ASSIGNMENTS – SQL ANSWER – TASK – 1 
+
+CREATE DATABASE :-
+
+	CREATE DATABASE assignmentdb;
+
+CREATE TABLE :-
+
+	Q-1.create table employee
+	    (
+    	       emp_id int primary key AUTO_INCREMENT,
+    	       first_name varchar(155),
+    	       last_name varchar(155),
+    	       salary float,
+    	       joining_date varchar(155),
+               department varchar(155)
+	    )
+		
+INSERT DATA INTO TABLE :-
+
+	Q-2.insert into employee values('null','john','abraham','1000000','2013-01-            01','banking'),
+            ('null','michael','clerk','800000','2013-01-01','insurance'),
+            ('null','roy','thomas','700000','2013-02-01','banking'),
+            ('null','tom','jose','600000','2013-02-01','insurance'),
+            ('null','jerry','pinto','650000','2013-01-01','insurance'),
+            ('null','philip','mathew','750000','2013-01-01','services'),
+            ('null','testname1','123','650000','2013-01-01','services'),
+            ('null','testname2','lname%','600000','2013-02-01','insurance')
+
+CREATE TABLE :-
+
+	Q-3.create table incentives
+            (
+    		incentive_id int primary key AUTO_INCREMENT,
+    		emp_id int REFERENCES employee(emp_id),
+    		incentive_date varchar(155),
+    		incentive_amt float
+	    )
+
+INSERT DATA INTO TABLE :-
+
+	Q-4.insert into incentives values('null','1','2013-02-01','5000'),
+		('null','2','2013-02-01','3000'),
+		('null','4','2013-02-01','4000'),
+		('null','1','2013-01-01','4500'),
+		('null','2','2013-01-01','3500')
+
+
+Q-5.select first_name as employee_name from employee;
+
+Q-6.select first_name,joining_date from employee;
+
+Q-7.SELECT * FROM employee ORDER BY first_name ASC,salary DESC;
+
+Q-8.select * from employee where first_name like '%o%';
+
+Q-9.select * from employee where joining_date='2013-01-01';
+
+Q-10.select sum(salary),department from employee GROUP BY department ORDER BY sum     (salary)DESC;
+
+Q-11.select max(salary),department from employee GROUP BY department ORDER BY max     (salary)ASC;
+
+Q-12.select first_name,incentive_amt from employee join incentives on employee.emp_id=incentives.emp_id where incentive_amt > 3000;
+
+Q-13.select max(salary) from employee where salary < (select max(salary) from employee);
+
+Q-14.select first_name,incentive_amt from incentives left join employee on incentives.emp_id=employee.emp_id;
+
+Q-15.select first_name,last_name,salary from employee;
+
+Q-16.select department, max(salary)from employee GROUP BY department;
+
+
+
