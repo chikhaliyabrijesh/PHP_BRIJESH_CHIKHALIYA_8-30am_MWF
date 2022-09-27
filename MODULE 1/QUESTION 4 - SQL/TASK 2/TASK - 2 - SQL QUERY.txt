@@ -1,0 +1,86 @@
+                          ASSIGNMENT - SQL ANSWER - TASK - 2
+
+CREATE TABLE :-
+	
+	Q-1.create table sales_person
+ 	    (
+    		sno int primary key,
+    		sname varchar(155),
+    		city varchar(155),
+    		comm float
+	    )
+
+INSERT DATA INTO TABLE :-
+
+	Q-2.insert into sales_person(sno,sname,city,comm)values('1001','peel','london','0.12'),
+		('1002','serres','san_jose','0.13'),
+		('1003','axelrod','new_york','0.1'),
+		('1004','motika','london','0.11'),
+		('1007','rafkin','barcelona','0.15')
+
+CREATE TABLE :-
+
+	Q-3.create table customer
+	    (
+    		cnm int primary key,
+  		cname varchar(155),
+    		city varchar(155),
+    		rating varchar(155),
+    		sno int REFERENCES sales_person(sno)
+	    )
+
+INSERT DATA INTO TABLE :-
+
+	Q-4.insert into customer(cnm,cname,city,rating,sno)values('201','hoffman','london','100','1001'),
+('202','giovanne','rome','200','1003'),
+('203','liu','san_jose','300','1002'),
+('204','grass','barcelona','100','1002'),
+('206','clements','london','300','1007'),
+('207','pereira','rome','100','1004')
+
+
+CREATE TABLE :-
+	
+	Q-5.create table tbl_order
+	    (
+    		onm int PRIMARY KEY,
+    		amt float,
+    		ode varchar(155),
+    		cnm int REFERENCES customer(cnm),
+    		sno int REFERENCES sales_person(sno)
+	    )
+
+INSERT DATA INTO TABLE :-
+
+	Q-6.insert into tbl_order(onm,amt,ode,cnm,sno)values('3001','18.69','03/10/1994','201','1007'),
+		('3002','1900.1','03/10/1994','207','1004'),
+		('3003','767.19','03/10/1994','201','1001'),
+		('3005','3005','03/10/1994','203','1002'),
+		('3006','3006','04/10/1994','201','1007'),
+		('3007','3007','05/10/1994','204','1002'),
+		('3008','3008','05/10/1994','206','1001'),
+		('3009','3009','04/10/1994','202','1003'),
+		('3010','3010','06/10/1994','204','1002'),
+		('3011','3011','06/10/1994','206','1001')
+
+Q-7.select * from tbl_order where amt > 1000;
+
+Q-8.select sname, city from sales_person where comm > 0.10 and city = 'london';
+
+Q-9.select sname, city from sales_person where city in ('Barcelona','London');
+
+Q-10.select sname, comm from sales_person where comm > 0.10 and comm < 0.12;
+
+Q-11.select cname from customer where city is null;
+
+Q-12.select * from tbl_order where ode in ('03/10/1994','04/10/1994'); 
+
+Q-13.select cname from customer, tbl_order where tbl_order.cnm=customer.cnm and           tbl_order.sno in(select sno from sales_person where sname in ('Peel','Motika'));
+
+Q-14.select cname from customer where cname like 'a%' or cname like 'b';
+
+Q-15.select cname from customer where rating <= 100 or city = 'rome';
+
+Q-16.select onm from tbl_order where amt != 0 or amt is not null;
+
+Q-17.select count(distinct sno) from tbl_order;
