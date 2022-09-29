@@ -1,0 +1,93 @@
+1.create database tablesdb;
+
+2.create table employee
+  (
+    emp_id int PRIMARY KEY AUTO_INCREMENT,
+    fname varchar(155),
+    lname varchar(155),
+    gender varchar(155),
+    address text,
+    department varchar(155),
+    salary float    
+  )
+
+3.alter table employee add mail varchar(155) after address;
+
+4.alter table employee change mail Email varchar(155);
+
+5.rename table employee to employees; & rename table employees to employee;
+
+6.insert into employee values('null','akshar','patel','male','rajkot','akshar10@gmail.com','web designing','1000000'),
+('null','anant','patel','male','rajkot','anant@gmail.com','web developing','900000'),
+('null','anil','kotadiya','male','ahmedabad','anil1999@gmail.com','application developing','800000'),
+('null','bhargav','akabari','male','baroda','bhargav15@gmail.com','web designing','700000'),
+('null','bipin','madhani','male','bhavnagar','bipin30@gmail.com','web developing','600000'),
+('null','chandresh','patel','male','porbandar','chandresh@gmail.com','application developing','500000'),
+('null','mahesh','kanani','male','morbi','mahesh25@gmail.com','web designing','400000'),
+('null','ketan','patel','male','anand','ketan20@gmail.com','web developing','300000'),
+('null','raj','pansuriya','male','jamnagar','raj1998@gmail.com','application developing','200000'),
+('null','nirav','kalariya','male','navsari','nirav21@gmail.com','web developing','100000')
+
+7.select * from employee where emp_id=1;
+
+8.select * from employee where fname='bhargav';
+
+9.select fname,lname,department,salary from employee;
+
+10.select * from employee WHERE emp_id in(1,3,5,7,9);
+
+11.select * from employee where fname in('akshar','anant');
+
+12.select * from employee where emp_id between 2 and 8;
+
+13.select fname,salary FROM employee ORDER BY fname DESC, salary ASC;
+
+14.select sum(salary),department FROM employee group by department;
+
+15.select * from employee WHERE fname LIKE 'a%';
+
+16.select * from employee WHERE fname LIKE '%r';
+
+17.select * from employee WHERE fname LIKE '%h%';
+
+18.select fname as employee_name from employee;
+
+19.select sum(salary) as total_salary from employee;
+
+20.SELECT avg(salary) as average_salary from employee;
+
+21.select max(salary) from employee; 
+
+22.select min(salary) from employee;
+
+23.select max(salary) from employee where salary < (select max(salary) from employee);
+
+24.select count(fname) as total_employee from employee;
+
+25.select salary from employee;
+
+26.select lcase(fname) from employee;
+
+27.select ucase(fname) from employee;
+
+28.create table country
+(	
+    cid int PRIMARY KEY AUTO_INCREMENT,
+    cname varchar(155)
+)
+
+29.insert into country values('null','India'),('null','USA')
+
+30.create table flip_state
+   (
+	sid int AUTO_INCREMENT primary key, 
+	sname varchar(255),
+	cid int REFERENCES flip_country(cid)    
+
+   )
+
+31.insert into state values('null','gujarat','1'),('null','MP','1'),('null','california','2'),('null','san jose','2')
+
+
+
+
