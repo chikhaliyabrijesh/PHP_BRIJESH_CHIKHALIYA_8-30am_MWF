@@ -1,0 +1,32 @@
+1. Get the length of the text in the “First_name” column.
+-> SELECT length(First_name) FROM employee;
+
+2. Get the employee’s first name after replacing ‘o’ with ‘#’.
+-> SELECT REPLACE(First_name,'o','#') FROM employee;
+
+3. Get the employee’s last name and first name in a single column separated by a ‘_’.
+-> SELECT concat(First_name,'_',Last_name) FROM employee;
+
+4. Get the year, month, and day from the “Joining_date” column.
+-> SELECT year(Joining_date),month(Joining_date),day(Joining_date) FROM employee;
+
+5. Get all employees in ascending order by first name.
+-> SELECT * from employee ORDER BY First_name ASC;
+
+6. Get all employees in descending order by first name.
+-> select * from employee order by First_name desc; 
+
+7. Get all employees in ascending order by first name and descending order by salary.
+-> SELECT * FROM employee ORDER BY First_name ASC,Salary DESC;
+
+8. Get employees whose first name is “Bob”.
+-> select * from employee where First_name='Bob';
+
+9. Get employees whose first name is “Bob” or “Alex”.
+-> SELECT * FROM employee WHERE First_name in ('Bob','alex');
+
+10.Get employees whose first name is neither “Bob” nor “Alex”.
+-> select * from employee where First_name not in('bob','alex');
+
+11.What is SQL injection?
+-> SQL injection is one of the techniques used by hackers to hack a website by injecting    SQL commands into data fields.
