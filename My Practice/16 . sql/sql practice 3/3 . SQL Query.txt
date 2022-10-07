@@ -1,0 +1,51 @@
+1. Get all employees.
+-> select * from employee;
+
+2. Display the first name and last name of all employees.
+-> SELECT First_name,Last_name FROM employee;
+
+3. Display all the values of the “First_Name” column using the alias “Employee Name”
+-> SELECT First_name AS employee_name FROM employee;
+
+4. Get all “Last_Name” in lowercase.
+-> SELECT lcase(Last_name) FROM employee;
+-> SELECT LOWER(Last_name) FROM employee;
+
+5. Get all “Last_Name” in uppercase.
+-> SELECT UPPER(Last_name) FROM employee;
+-> SELECT ucase(Last_name) FROM employee;
+
+6. Get unique “DEPARTMENT”.
+-> SELECT DISTINCT Departement FROM employee;
+
+7. Get the first 4 characters of “FIRST_NAME” column.
+-> SELECT substring(First_name,1,4) FROM employee;
+
+8. Get the position of the letter ‘h’ in ‘John’.
+-> SELECT locate('h',First_name) FROM employee WHERE First_name="john";
+
+9. Get all values from the “FIRST_NAME” column after removing white space on the right.
+-> SELECT RTRIM(First_name) FROM employee;
+
+10.Get all values from the “FIRST_NAME” column after removing white space on the left.
+-> SELECT LTRIM(First_name) FROM employee;
+
+11.Display the alternate rows from employee table.(METHOD 1)
+-> SELECT * FROM employee GROUP BY Employee_id having MOD(Employee_id,2)=1;
+                                 OR
+-> SELECT * FROM employee GROUP BY Employee_id having MOD(Employee_id,2)=0;
+
+11.Display the alternate rows from employee table.(METHOD 2)
+-> SELECT * FROM employee WHERE Employee_id IN(SELECT Employee_id from employee WHERE    Employee_id%2=0);
+                                 OR 
+-> SELECT * FROM employee WHERE Employee_id IN(SELECT Employee_id from employee WHERE    Employee_id%2=1);
+
+(MySQL MOD() method returns the remainder of a number divided by another number. So for getting alternate rows, we can divide the ID with 2 and displays only those having remainder 1.)
+
+12.Display the details of first 5 highly paid employee using mysql.
+-> SELECT * FROM employee ORDER BY Salary DESC LIMIT 5;
+
+
+
+
+
