@@ -1,0 +1,30 @@
+1. Get all the details on employees whose participation month (Joining_date) is “January”
+-> select * from employee where month(Joining_date) = '01';
+
+2. Get all the details of the employees who joined before March 1, 2019
+-> select * from employee where Joining_date < '2019-03-01';
+
+3. Get all the details on employees who joined after March 31, 2019
+-> select * from employee where Joining_date > '2019-03-31';
+
+4. Get the date and time of the employee’s enrollment.
+-> select convert(date_format(Joining_date,'%Y-%m-%d-%H:%i:00'),datetime)from employee;
+
+5. Get the date and time, including milliseconds of the employee’s membership.
+-> select microsecond(Joining_date) from employee;
+
+6. Get the difference between the “Joining_date” and “date_reward” column
+-> select r.date_reward - e.joining_date from employee e inner join reward r on    e.Employee_id=r.Employee_ref_id;
+
+7. Get the current date and time.
+-> select now();
+
+8. Get the first names of employees who have the character ‘%’. Example: ‘Jack%’.
+-> select First_name from employee where First_name like '%\%%';
+-> We use the escape character ‘ \ ‘ for special characters in a query.
+
+9. Get the employee name (Last_name) after replacing the special character with white space.
+-> select replace(Last_name,'%',' ')from employee;
+
+10.Get the employee’s department and total salary, grouped by department.
+-> select Departement,sum(salary) as total from employee group by Departement;
